@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRS Trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="dashboard-page">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside id="sidebar">
+        <div class="logo-wrap">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.png" alt="TRS Trader" class="logo-img">
+                <span class="logo-collapsed-text">TRS</span>
+            </a>
+        </div>
+        <nav>
+            <div class="nav-label">Menu</div>
+
+            <a href="#" class="active" data-url="inicio.html">
+                <i class="fas fa-chart-pie"></i>
+                <span>Inicio - TRS Trader</span>
+            </a>
+
+            <a href="#" data-url="calendario.html">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Calendário econômico</span>
+            </a>
+
+            <a href="#" data-url="youtube.com">
+                <i class="fas fa-circle-play"></i>
+                <span>Live</span>
+            </a>
+
+            <a href="#" data-url="grafico.html">
+                <i class="fas fa-chart-line"></i>
+                <span>Grafico</span>
+            </a>
+
+            <a href="#" data-url="horarios.html">
+                <i class="fas fa-clock"></i>
+                <span>Horários</span>
+            </a>
+
+            <a href="#" data-url="contato.html">
+                <i class="fas fa-address-book"></i>
+                <span>Contato</span>
+            </a>
+
+            <a href="#" data-url="mensagem.html">
+                <i class="fas fa-envelope"></i>
+                <span>Mensagens</span>
+            </a>
+
+            <a href="#" data-url="membros.html">
+                <i class="fas fa-users"></i>
+                <span>Membros</span>
+                <span class="badge">12</span>
+            </a>
+
+            <a href="#" data-url="https://example.com/agenda">
+                <i class="fas fa-calendar-check"></i>
+                <span>Agenda</span>
+            </a>
+
+            <a href="#" data-url="pratica.html">
+                <i class="fas fa-book"></i>
+                <span>Como Funciona</span>
+            </a>
+
+            <a href="https://api.whatsapp.com/send/?phone=5565981505773&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="menu-whatsapp-btn">
+                <span class="menu-wpp-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                <span class="menu-wpp-text">
+                    <span class="menu-wpp-title">Falar no WhatsApp</span>
+                    <span class="menu-wpp-sub">Atendimento direto &amp; suporte</span>
+                </span>
+                <span class="menu-wpp-arrow" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+            </a>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div class="header-left">
+                <button class="toggle-btn" id="toggleSidebar" aria-label="Alternar menu lateral" aria-expanded="true">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-title">
+                    <a href="index.html" class="logo-link">
+                        <img src="assets/logo.png" alt="TRS Trader" class="header-logo">
+                    </a><span>· Visão geral</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button aria-label="Notificações" id="btnNotificacoes" onClick="abrirPopupLive()">
+                    <i class="fas fa-bell"></i>
+                    <span class="notif-dot"></span>
+                </button>
+            </div>
+        </header>
+
+        <div class="content">
+            <iframe id="main-iframe" src="" title="Conteúdo do menu"></iframe>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+
+    <!-- Popup Horário de Lives -->
+    <div class="modal" id="modalLive" role="dialog" aria-modal="true" aria-labelledby="popupLiveTitle">
+        <div class="modal-backdrop" onClick="fecharPopupLive()"></div>
+        <div class="modal-content" onClick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="popupLiveTitle">Horário de Lives</h3>
+                <button class="modal-close" onClick="fecharPopupLive()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Segunda a Sexta-feira</strong></p>
+                <p><strong>das 09:00 às 17:00</strong></p>
+                <p style="font-size:0.9rem; color:#94a3b8; margin-top:1rem;">Acompanhe nossas lives diárias com análises de mercado.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopupLive() {
+            document.getElementById('modalLive').classList.add('active');
+        }
+        function fecharPopupLive() {
+            document.getElementById('modalLive').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharPopupLive();
+        });
+    </script>
+
+   <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6adff160659e703472edfb3f/1k5tcdp16';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>

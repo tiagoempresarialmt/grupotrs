@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f2027">
+    <meta name="description" content="Mensagens e avisos do TRS Trader.">
+    <title>Mensagens e Avisos · TRS Trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="mensagem-page">
+    <main class="page">
+        <header class="topbar" aria-label="TRS Trader">
+            <div>
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="TRS Trader" class="brand-logo">
+                </a>
+                <div class="brand-caption">Mensagens e avisos da comunidade</div>
+            </div>
+        </header>
+
+        <section class="hero" aria-labelledby="page-title">
+            <div>
+                <div class="eyebrow">Painel de avisos</div>
+                <h1 id="page-title">Mensagens e <span>avisos</span></h1>
+                <p class="intro">
+                    Acompanhe os comunicados, atualizações e avisos importantes da TRS Trader.
+                    Confira as últimas mensagens abaixo.
+                </p>
+            </div>
+
+            <article class="about-card">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                </div>
+                <h2>Últimos comunicados</h2>
+                <p>
+                    Fique por dentro de tudo o que está acontecendo na comunidade.
+                    Novos avisos são publicados aqui primeiro.
+                </p>
+            </article>
+        </section>
+
+        <section class="contact-section" aria-labelledby="msgs-title">
+            <div class="contact-heading">
+                <div>
+                    <h2 id="msgs-title">Mensagens recentes</h2>
+                    <p>Novidades da TRS Trader</p>
+                </div>
+            </div>
+
+            <div class="mensagens-lista">
+                <div class="msg-card msg-info">
+                    <div class="msg-header">
+                        <span class="msg-tag">Informativo</span>
+                        <span class="msg-data">25 de outubro de 2026</span>
+                    </div>
+                    <h3>Nova sala ao vivo disponível</h3>
+                    <p>
+                        A partir de segunda-feira teremos uma nova sala de análise gráfica ao vivo
+                        das 09:00 às 12:00. Acesse pelo menu "Live".
+                    </p>
+                </div>
+
+                <div class="msg-card msg-aviso">
+                    <div class="msg-header">
+                        <span class="msg-tag">Aviso</span>
+                        <span class="msg-data">20 de outubro de 2026</span>
+                    </div>
+                    <h3>Manutenção no sistema</h3>
+                    <p>
+                        O calendário econômico estará temporariamente indisponível nesta sexta-feira
+                        das 14:00 às 16:00 para atualização.
+                    </p>
+                </div>
+
+                <div class="msg-card msg-urgente">
+                    <div class="msg-header">
+                        <span class="msg-tag">Urgente</span>
+                        <span class="msg-data">15 de outubro de 2026</span>
+                    </div>
+                    <h3>Cuidado com golpes</h3>
+                    <p>
+                        Nunca compartilhe sua senha ou envie PIX para terceiros. A TRS Trader não
+                        solicita pagamentos por mensagem direta.
+                    </p>
+                </div>
+
+                <div class="msg-card msg-info">
+                    <div class="msg-header">
+                        <span class="msg-tag">Informativo</span>
+                        <span class="msg-data">10 de outubro de 2026</span>
+                    </div>
+                    <h3>Novo material de apoio</h3>
+                    <p>
+                        Disponibilizamos um novo guia de introdução à análise gráfica na seção
+                        WhatsApp do menu.
+                    </p>
+                </div>
+            </div>
+
+            <div class="msg-empty" style="display:none;">
+                <p>Nenhum aviso novo no momento.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup Horário de Lives -->
+    <div class="modal" id="modalLive" role="dialog" aria-modal="true" aria-labelledby="popupLiveTitle">
+        <div class="modal-backdrop" onclick="fecharPopupLive()"></div>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="popupLiveTitle">Horário de Lives</h3>
+                <button class="modal-close" onclick="fecharPopupLive()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Segunda a Sexta-feira</strong></p>
+                <p><strong>das 09:00 às 17:00</strong></p>
+                <p style="font-size:0.9rem; color:#94a3b8; margin-top:1rem;">Acompanhe nossas lives diárias com análises de mercado.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopupLive() {
+            document.getElementById('modalLive').classList.add('active');
+        }
+        function fecharPopupLive() {
+            document.getElementById('modalLive').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharPopupLive();
+        });
+    </script>
+</body>
+</html>

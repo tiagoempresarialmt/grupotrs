@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f2027">
+    <meta name="description" content="Melhores horários para operar: horários principais do pregão da B3 (Bolsa de Valores do Brasil).">
+    <title>Horários de Operação · TRS Trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="horarios-page">
+    <main class="page">
+        <header class="topbar" aria-label="TRS Trader">
+            <div>
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="TRS Trader" class="brand-logo">
+                </a>
+                <div class="brand-caption">Aprendizado e análise gráfica</div>
+            </div>
+        </header>
+
+        <section class="hero" aria-labelledby="page-title">
+            <div>
+                <div class="eyebrow">Horários de operação</div>
+                <h1 id="page-title">Melhores horários <span>para operar</span></h1>
+                <p class="intro">
+                    O pregão da B3 (Bolsa de Valores do Brasil) funciona em dias úteis,
+                    em horário de Brasília. Veja abaixo os horários principais de
+                    funcionamento e opere nos momentos de maior liquidez.
+                </p>
+            </div>
+
+            <article class="about-card">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div>
+                <h2>Pregão da B3</h2>
+                <p>
+                    Conheça os horários principais da Bolsa de Valores do Brasil e
+                    saiba quando o mercado está aberto para operar.
+                </p>
+            </article>
+        </section>
+
+        <section class="contact-section" aria-labelledby="b3-title">
+            <div class="contact-heading">
+                <div>
+                    <h2 id="b3-title">Horários do pregão da B3</h2>
+                    <p>O pregão da B3 (Bolsa de Valores do Brasil) funciona com os seguintes horários principais:</p>
+                </div>
+            </div>
+
+            <div class="fx-sessoes">
+                <div class="fx-sessao">
+                    <h3>Pré-abertura</h3>
+                    <p class="fx-sessao-horas">09:30 – 10:00</p>
+                    <p class="fx-sessao-local">Período de formação de preço antes da abertura do pregão.</p>
+                </div>
+                <div class="fx-sessao">
+                    <h3>Pregão regular</h3>
+                    <p class="fx-sessao-horas">10:00 – 18:00</p>
+                    <p class="fx-sessao-local">Horário principal de negociação do mercado à vista (ações).</p>
+                </div>
+                <div class="fx-sessao">
+                    <h3>Fechamento (closing)</h3>
+                    <p class="fx-sessao-horas">17:55 – 18:00</p>
+                    <p class="fx-sessao-local">Chamada de fechamento do pregão regular.</p>
+                </div>
+                <div class="fx-sessao">
+                    <h3>After market</h3>
+                    <p class="fx-sessao-horas">18:00 – 19:00</p>
+                    <p class="fx-sessao-local">Negociação pós-fechamento, com liquidez reduzida.</p>
+                </div>
+            </div>
+
+            <p class="fx-overlap">
+                📌 <strong>Futuros (mini índice e mini dólar):</strong> pregão regular das 09:00 às 18:30. Os horários acima são de referência
+                (horário de Brasília) — consulte sempre o calendário oficial da B3, pois feriados e
+                dias especiais podem alterar o funcionamento.
+            </p>
+        </section>
+    </main>
+
+    <!-- Popup Horário de Lives -->
+    <div class="modal" id="modalLive" role="dialog" aria-modal="true" aria-labelledby="popupLiveTitle">
+        <div class="modal-backdrop" onclick="fecharPopupLive()"></div>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="popupLiveTitle">Horário de Lives</h3>
+                <button class="modal-close" onclick="fecharPopupLive()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Segunda a Sexta-feira</strong></p>
+                <p><strong>das 09:00 às 17:00</strong></p>
+                <p style="font-size:0.9rem; color:#94a3b8; margin-top:1rem;">Acompanhe nossas lives diárias com análises de mercado.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopupLive() {
+            document.getElementById('modalLive').classList.add('active');
+        }
+        function fecharPopupLive() {
+            document.getElementById('modalLive').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharPopupLive();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f2027">
+    <meta name="description" content="Como funciona na prática o TRS Trader: passo a passo para começar.">
+    <title>Como Funciona na Prática · TRS Trader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="pratica-page">
+    <main class="page">
+        <header class="topbar" aria-label="TRS Trader">
+            <div>
+                <a href="index.html" class="logo-link">
+                    <img src="assets/logo.png" alt="TRS Trader" class="brand-logo">
+                </a>
+                <div class="brand-caption">Aprendizado e análise gráfica</div>
+            </div>
+        </header>
+
+        <section class="hero" aria-labelledby="page-title">
+            <div>
+                <div class="eyebrow">Como funciona</div>
+                <h1 id="page-title">Como funciona na <span>prática</span></h1>
+                <p class="intro">
+                    Um passo a passo simples para começar: entre na comunidade,
+                    acompanhe as salas ao vivo e aprenda com método e consistência.
+                </p>
+            </div>
+
+            <article class="about-card">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h2>O caminho até o seu primeiro resultado</h2>
+                <p>
+                    Não é mágica, é método. Siga os três passos abaixo para entrar
+                    na sala, entender o mercado e aplicar com confiança.
+                </p>
+            </article>
+        </section>
+
+        <section class="contact-section" aria-labelledby="steps-title">
+            <div class="contact-heading">
+                <div>
+                    <h2 id="steps-title">Três passos para começar</h2>
+                    <p>Comece hoje mesmo e evolua com consistência.</p>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <div class="vertical-line"></div>
+                <div class="line-dots">
+                    <div class="line-dot"></div>
+                    <div class="line-dot"></div>
+                    <div class="line-dot"></div>
+                </div>
+
+                <div class="cards-column">
+                    <div class="card step-card">
+                        <div class="step-number">01</div>
+                        <div class="card-content">
+                            <h3>Escolha o que faz sentido para você</h3>
+                            <p>Salas ao vivo, cursos ou materiais de apoio. Você escolhe o que acompanhar no mesmo dia.</p>
+                        </div>
+                    </div>
+
+                    <div class="card step-card">
+                        <div class="step-number">02</div>
+                        <div class="card-content">
+                            <h3>Acesse pela web ou aplicativo</h3>
+                            <p>Pelo computador ou celular, você decide como acompanhar as salas ao vivo.</p>
+                        </div>
+                    </div>
+
+                    <div class="card step-card">
+                        <div class="step-number">03</div>
+                        <div class="card-content">
+                            <h3>Aprenda, aplique e evolua</h3>
+                            <p>Entenda o processo, refine sua leitura de mercado e tome decisões mais conscientes, com método e experiência prática.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup Horário de Lives -->
+    <div class="modal" id="modalLive" role="dialog" aria-modal="true" aria-labelledby="popupLiveTitle">
+        <div class="modal-backdrop" onclick="fecharPopupLive()"></div>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="popupLiveTitle">Horário de Lives</h3>
+                <button class="modal-close" onclick="fecharPopupLive()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Segunda a Sexta-feira</strong></p>
+                <p><strong>das 09:00 às 17:00</strong></p>
+                <p style="font-size:0.9rem; color:#94a3b8; margin-top:1rem;">Acompanhe nossas lives diárias com análises de mercado.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirPopupLive() {
+            document.getElementById('modalLive').classList.add('active');
+        }
+        function fecharPopupLive() {
+            document.getElementById('modalLive').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharPopupLive();
+        });
+    </script>
+</body>
+</html>
